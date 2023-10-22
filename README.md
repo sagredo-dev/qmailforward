@@ -28,7 +28,9 @@ Requirements
 Author
 ------
 Roberto Puzzanghera
+
 roberto dot puzzanghera at sagredo dot eu
+
 https://notes.sagredo.eu
 
 License
