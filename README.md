@@ -67,6 +67,6 @@ Send new translations to the e-mail above
 
 Support
 -------
-To ask for support post a comments in my blog at https://notes.sagredo.eu/en/qmail-notes-185/roundcube-plugins-35.html
+To ask for support post a comment in my blog at https://notes.sagredo.eu/en/qmail-notes-185/roundcube-plugins-35.html
 
 [gpl]: https://www.gnu.org/licenses/gpl.html
