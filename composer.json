@@ -1,0 +1,26 @@
+{
+  "name": "sagredo-dev/qmailforward",
+  "description": "Adds the ability for qmail users to edit their forward from within Roundcube.",
+  "keywords": ["qmail", "forward"],
+  "homepage": "https://github.com/sagredo-dev/qmailforward",
+  "license": "GPL-3.0-or-later",
+  "type": "roundcube-plugin",
+  "version": "1.1.0",
+  "authors": [
+    {
+      "name": "Roberto Puzzanghera",
+      "email": "roberto dot puzzanghera at sagredo dot eu",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=8.0",
+    "roundcube/plugin-installer": ">=0.1.2"
+  },
+  "extra": {
+    "roundcube": {
+      "min-version": "1.5",
+      "persistent-files": ["config.inc.php", "skins/elastic/_custom.less"]
+    }
+  }
+}
