@@ -44,10 +44,12 @@ Install
   want to loose, then execute the following query. Drop any PRIMARY KEY if you
   already have one.
 
-<pre>USE vpopmail;
+```sql
+USE vpopmail;
 ALTER TABLE `valias` ADD `valias_type` TINYINT(1) NOT NULL DEFAULT '1' COMMENT '1=forwarder 0=lda' FIRST;
 ALTER TABLE `valias` ADD `copy` TINYINT(1) NOT NULL DEFAULT '0' COMMENT '0=redirect 1=copy&redirect' AFTER `valias_line`;
-ALTER TABLE `valias` ADD PRIMARY KEY (`valias_type`, `alias`, `domain`);</pre>
+ALTER TABLE `valias` ADD PRIMARY KEY (`valias_type`, `alias`, `domain`);
+```
 
 Configuration
 -------------
