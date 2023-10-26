@@ -25,14 +25,6 @@ Requirements
 * you may want to patch qmailadmin as well with the latest patch as of
   August 2023
 
-Author
-------
-Roberto Puzzanghera [roberto dot puzzanghera at sagredo dot eu https://notes.sagredo.eu]
-
-License
--------
-This plugin is released under the [GNU General Public License Version 3+][gpl].
-
 Install
 -------
 * Place this plugin folder into plugins directory of Roundcube
@@ -64,6 +56,14 @@ Supported languages
 * it_IT - Italian
 
 Send new translations to the e-mail above
+
+Author
+------
+Roberto Puzzanghera [roberto dot puzzanghera at sagredo dot eu https://notes.sagredo.eu]
+
+License
+-------
+This plugin is released under the [GNU General Public License Version 3+][gpl].
 
 Support
 -------
