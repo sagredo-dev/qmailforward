@@ -55,7 +55,7 @@ Supported languages
 * en_GB - English (GB)
 * it_IT - Italian
 
-Send new translations to the e-mail above
+Send new translations to the e-mail below.
 
 Author
 ------
