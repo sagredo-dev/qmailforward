@@ -22,8 +22,7 @@ Requirements
 * vpopmail patched with my latest patch as of August 2023
 * vpopmail configured with virtual aliases --enable-valias and patched to
   modify the colums according to the already mentioned patch.
-* you may want to patch qmailadmin as well with the latest patch as of
-  August 2023
+* you may want to patch qmailadmin as well with the latest patch.
 
 Install
 -------
