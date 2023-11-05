@@ -10,14 +10,10 @@
  * When an alias is created, and the msg copy is wanted, another 'alias_line'
  * field with the defaultdelivery will be added, in order to copy the msg to mailbox.
  ********************************************************************/
-$config['qmailforward_defaultdelivery_enabled'] = true;
 
 // The content of the valias for the delivery. Put here your value as if it was
 // a dot-qmail file content.
 $config['qmailforward_defaultdelivery'] = '| /var/qmail/bin/preline -f /usr/local/dovecot/libexec/dovecot/deliver -d $EXT@$USER';
-
-// if qmailforward_defaultdelivery_enable = false this other lda will be used to save a copy to the mailbox
-$config['qmailforward_vdelivermail'] = "| ~vpopmail/bin/vdelivermail '' delete";
 
 
 /********************************************************************

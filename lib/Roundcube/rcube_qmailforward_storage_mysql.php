@@ -35,9 +35,8 @@ class rcube_qmailforward_storage_mysql extends rcube_qmailforward_storage
     private $valias_field;
     private $type_field;
     private $copy_field;
-    private $defaultdelivery_enabled;
     private $defaultdelivery;
-    private $vdelivermail;
+    private $defaultdelivery_enabled;
 
     /**
      * Object constructor
@@ -46,18 +45,19 @@ class rcube_qmailforward_storage_mysql extends rcube_qmailforward_storage
      */
     public function __construct($config)
     {
-                        $this->db_dsnw = $config->get('qmailforward_db_dsnw');
-                        $this->db_dsnr = $config->get('qmailforward_db_dsnr');
-                  $this->db_persistent = $config->get('qmailforward_db_persistent');
-                     $this->table_name = $config->get('qmailforward_sql_table_name');
-                    $this->alias_field = $config->get('qmailforward_sql_alias_field');
-                   $this->domain_field = $config->get('qmailforward_sql_domain_field');
-                   $this->valias_field = $config->get('qmailforward_sql_valias_field');
-                     $this->type_field = $config->get('qmailforward_sql_type_field');
-                     $this->copy_field = $config->get('qmailforward_sql_copy_field');
-        $this->defaultdelivery_enabled = $config->get('qmailforward_defaultdelivery_enabled');
-                $this->defaultdelivery = $config->get('qmailforward_defaultdelivery');
-                   $this->vdelivermail = $config->get('qmailforward_vdelivermail');
+                $this->db_dsnw = $config->get('qmailforward_db_dsnw');
+                $this->db_dsnr = $config->get('qmailforward_db_dsnr');
+          $this->db_persistent = $config->get('qmailforward_db_persistent');
+             $this->table_name = $config->get('qmailforward_sql_table_name');
+            $this->alias_field = $config->get('qmailforward_sql_alias_field');
+           $this->domain_field = $config->get('qmailforward_sql_domain_field');
+           $this->valias_field = $config->get('qmailforward_sql_valias_field');
+             $this->type_field = $config->get('qmailforward_sql_type_field');
+             $this->copy_field = $config->get('qmailforward_sql_copy_field');
+        $this->defaultdelivery = $config->get('qmailforward_defaultdelivery');
+
+        // no need to write the lda to DB if the delivery is vdelivermail
+        $this->defaultdelivery_enabled = (strpos($this->defaultdelivery, 'vdelivermail') === false) ? true : false;
     }
 
     /**
@@ -187,28 +187,30 @@ class rcube_qmailforward_storage_mysql extends rcube_qmailforward_storage
                 $this->db->query($sql);
                 if (!$this->db->affected_rows()) return false;
 
-                // save the lda record
-                // get lda
-                $lda = $this->defaultdelivery_enabled ?
-                       $this->defaultdelivery :
-                       $this->vdelivermail;
+                /*
+                  Save the lda record
+                  Skip if the LDA is vdelivermail to avoid vpopmail loop,
+                  as vdelivermail is already in .qmail-default.
+                 */
+                if ($this->defaultdelivery_enabled) {
+                    $sql = "INSERT INTO ".$this->table_name.
+                           " SET ".$this->alias_field. "='".$user.  "', ".
+                                   $this->domain_field."='".$domain."', ".
+                                   $this->valias_field."=".$this->db->quote($this->defaultdelivery).", ".
+                                   $this->type_field.  "=0 ".
+                           "ON DUPLICATE KEY UPDATE ".
+                                   $this->alias_field. "='".$user.  "', ".
+                                   $this->domain_field."='".$domain."', ".
+                                   $this->valias_field."=".$this->db->quote($this->defaultdelivery).", ".
+                                   $this->type_field.  "=0";
 
-                $sql = "INSERT INTO ".$this->table_name.
-                       " SET ".$this->alias_field. "='".$user.  "', ".
-                               $this->domain_field."='".$domain."', ".
-                               $this->valias_field."=".$this->db->quote($lda).", ".
-                               $this->type_field.  "=0 ".
-                       "ON DUPLICATE KEY UPDATE ".
-                               $this->alias_field. "='".$user.  "', ".
-                               $this->domain_field."='".$domain."', ".
-                               $this->valias_field."=".$this->db->quote($lda).", ".
-                               $this->type_field.  "=0";
-
-                $this->db->query($sql);
-                $result = $this->db->affected_rows();
+                    $this->db->query($sql);
+                    $result = $this->db->affected_rows();
+                    return $result;
+                }
             }
         }
-        return $result;
+        return true;
     }
 
 
