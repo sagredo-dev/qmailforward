@@ -20,19 +20,19 @@ and managesieve plugins. The latter one provides an identical html form.
 Requirements
 ------------
 * vpopmail patched with my latest patch https://notes.sagredo.eu/en/qmail-notes-185/installing-and-configuring-vpopmail-81.html
-* vpopmail configured with virtual aliases --enable-valias and patched to
+* vpopmail configured with virtual aliases `--enable-valias` and patched to
   modify the colums according to the already mentioned patch.
 * you may want to patch qmailadmin as well with the latest patch https://notes.sagredo.eu/en/qmail-notes-185/qmailadmin-23.html
 
 Install
 -------
 * Place this plugin folder into plugins directory of Roundcube
-* Add qmailforward to $config['plugins'] in your Roundcube config
+* Add qmailforward to `$config['plugins']` in your Roundcube config
 * If you are switching to valiases the table will be created for you at first
   access. I you already have the valias table but it's still empty, just erase
   it and let vpopmail create for you.
 * If your valias table already exist and it contains records that you don't
-  want to loose, then execute the following query. Drop any PRIMARY KEY if you
+  want to loose, then execute the following query. Drop any `PRIMARY KEY` if you
   already have one.
 
 ```sql
