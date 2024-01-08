@@ -19,10 +19,10 @@ and managesieve plugins. The latter one provides an identical html form.
 
 Requirements
 ------------
-* vpopmail patched with my latest patch https://notes.sagredo.eu/en/qmail-notes-185/installing-and-configuring-vpopmail-81.html
+* vpopmail version 5.6.0 or later https://notes.sagredo.eu/en/qmail-notes-185/installing-and-configuring-vpopmail-81.html
 * vpopmail configured with virtual aliases `--enable-valias` and patched to
   modify the colums according to the already mentioned patch.
-* you may want to patch qmailadmin as well with the latest patch https://notes.sagredo.eu/en/qmail-notes-185/qmailadmin-23.html
+* you may want to upgrade qmailadmin as well (https://notes.sagredo.eu/en/qmail-notes-185/qmailadmin-23.html)
 
 Install
 -------
