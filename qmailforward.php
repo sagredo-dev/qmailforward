@@ -7,7 +7,7 @@
  * aliases in the database (--enable-valias). Adjustments to
  * qmailadmin are needed as well.
  *
- * @version 1.0.1
+ * @version 1.0.2
  * @author Roberto Puzzanghera
  * @url https://notes.sagredo.eu/en/qmail-notes-185/roundcube-plugins-35.html#qmailforward
  *
