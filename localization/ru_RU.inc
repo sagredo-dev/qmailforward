@@ -1,5 +1,5 @@
 <?php
-/* russian translation for qmailforward plugin */
+/* russian translation for qmailforward plugin (thanks Mike) */
 
 $labels['manage-forward'] = 'Настройки переадресации';
 $labels['page-title']     = 'Настройки переадресации';
