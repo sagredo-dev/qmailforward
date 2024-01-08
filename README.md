@@ -53,6 +53,7 @@ Supported languages
 * en_US - English (US)
 * en_GB - English (GB)
 * it_IT - Italian
+* ru_RU - Russian
 
 Send new translations to the e-mail below.
 
