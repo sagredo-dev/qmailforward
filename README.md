@@ -10,8 +10,7 @@ the forwards on the database, also preserving the possibility of saving a record
 
 Using this method instead of sieve rules allows qmail users to keep the SPF policies in effect.
 
-Inspiration and part of the code for this plugin was taken from the sieverules
-and managesieve plugins. The latter one provides an identical html form.
+Inspiration and part of the code for this plugin was taken from the sieverules and managesieve plugins. The latter one provides an identical html form.
 
 Requirements
 ------------
@@ -22,11 +21,11 @@ Requirements
 
 Install
 -------
-* Place this plugin folder into plugins directory of Roundcube
+* Place this plugin folder into the plugins directory of Roundcube
 * Add qmailforward to `$config['plugins']` in your Roundcube config
 * If you are switching to valiases the table will be created for you at first
   access. I you already have the valias table but it's still empty, just erase
-  it and let vpopmail create for you.
+  it and let vpopmail create it for you.
 * If your valias table already exist and it contains records that you don't
   want to loose, then execute the following query. Drop any `PRIMARY KEY` if you
   already have one.
