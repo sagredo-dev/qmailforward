@@ -1,4 +1,4 @@
-Roundcube Webmail qmailforward
+Roundcube Webmail qmailforward plugin
 ==============================
 This plugin adds the ability for qmail users to edit their forward from within
 Roundcube with no need to ask their administrators for doing that via qmailadmin.
