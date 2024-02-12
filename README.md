@@ -14,10 +14,10 @@ Inspiration and part of the code for this plugin was taken from the sieverules a
 
 Requirements
 ------------
-* vpopmail version 5.6.0 or later https://notes.sagredo.eu/en/qmail-notes-185/installing-and-configuring-vpopmail-81.html
+* [vpopmail version 5.6.0 or later](https://notes.sagredo.eu/en/qmail-notes-185/installing-and-configuring-vpopmail-81.html])
 * vpopmail configured with virtual aliases `--enable-valias` and patched to
   modify the colums according to the already mentioned patch.
-* you may want to upgrade qmailadmin as well (https://notes.sagredo.eu/en/qmail-notes-185/qmailadmin-23.html)
+* you may want to upgrade [qmailadmin](https://notes.sagredo.eu/en/qmail-notes-185/qmailadmin-23.html) as well 
 
 Install
 -------
@@ -62,6 +62,6 @@ This plugin is released under the [GNU General Public License Version 3+][gpl].
 
 Support
 -------
-To ask for support post a comment in my blog at https://notes.sagredo.eu/en/qmail-notes-185/roundcube-plugins-35.html
+To ask for support post a comment in [my blog](https://notes.sagredo.eu/en/qmail-notes-185/roundcube-plugins-35.html)
 
 [gpl]: https://www.gnu.org/licenses/gpl.html
