@@ -1,23 +1,23 @@
-Roundcube Webmail qmailforward plugin
+Roundcube Webmail `qmailforward` plugin
 ==============================
-This plugin adds the ability for qmail users to edit their forward from within
-Roundcube with no need to ask their administrators for doing that via qmailadmin.
-qmailforwards saves the forwards to MySQL database.
+This plugin adds the ability for `qmail` users to edit their forward from within
+`Roundcube` with no need to ask their administrators for doing that via `qmailadmin`.
+`qmailforwards` saves the forwards to MySQL database.
 
-Unlike the managesieve plugin, from which this plugin is inspired but which only
+Unlike the `managesieve` plugin, from which this plugin is inspired but which only
 apparently behaves in the same way, it does not use the sieve rules but it saves
 the forwards on the database, also preserving the possibility of saving a record that enables the copy of messages on the mailbox. In this case the execution of the favorite delivery agent is launched, which can also be set from the configuration file. 
 
-Using this method instead of sieve rules allows qmail users to keep the SPF policies in effect.
+Using this method instead of sieve rules allows `qmail` users to keep the SPF policies in effect.
 
-Inspiration and part of the code for this plugin was taken from the sieverules and managesieve plugins. The latter one provides an identical html form.
+Inspiration and part of the code for this plugin was taken from the `sieverules` and `managesieve` plugins. The latter one provides an identical html form.
 
 Requirements
 ------------
-* [vpopmail version 5.6.0 or later](https://notes.sagredo.eu/en/qmail-notes-185/installing-and-configuring-vpopmail-81.html])
-* vpopmail configured with virtual aliases `--enable-valias` and patched to
+* [`vpopmail` version 5.6.0 or later](https://notes.sagredo.eu/en/qmail-notes-185/installing-and-configuring-vpopmail-81.html])
+* `vpopmail` configured with virtual aliases `--enable-valias` and patched to
   modify the colums according to the already mentioned patch.
-* you may want to upgrade [qmailadmin](https://notes.sagredo.eu/en/qmail-notes-185/qmailadmin-23.html) as well 
+* you may want to upgrade [`qmailadmin`](https://notes.sagredo.eu/en/qmail-notes-185/qmailadmin-23.html) as well 
 
 Install
 -------
@@ -39,8 +39,8 @@ ALTER TABLE `valias` ADD PRIMARY KEY (`valias_type`, `alias`, `domain`);
 
 Configuration
 -------------
-* The default config file is plugins/qmailforward/config.inc.php.dist
-* Copy the options you have to modify to plugins/qmailforward/config.inc.php
+* The default config file is *plugins/qmailforward/config.inc.php.dist*
+* Copy the options you have to modify to *plugins/qmailforward/config.inc.php*
 * You must set at least the database connection string
 
 Supported languages
