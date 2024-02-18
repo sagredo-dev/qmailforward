@@ -21,8 +21,8 @@ Requirements
 
 Install
 -------
-* Place this plugin folder into the plugins directory of Roundcube
-* Add qmailforward to `$config['plugins']` in your Roundcube config
+* Place this plugin folder into the plugins directory of `Roundcube`
+* Add `qmailforward` to `$config['plugins']` in your `Roundcube` config
 * If you are switching to valiases the table will be created for you at first
   access. If you already have the valias table but it's still empty, just erase
   it and let vpopmail create it for you.
