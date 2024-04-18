@@ -1,12 +1,14 @@
 Roundcube Webmail `qmailforward` plugin
 ==============================
-This plugin adds the ability for `qmail` users to edit their forward from within
+This plugin adds the ability for `qmail` users to edit their forwards from within
 `Roundcube` with no need to ask their administrators for doing that via `qmailadmin`.
-`qmailforwards` saves the forwards to MySQL database.
+`qmailforward` saves the forwards to `MySQL` database.
 
 Unlike the `managesieve` plugin, from which this plugin is inspired but which only
 apparently behaves in the same way, it does not use the sieve rules but it saves
-the forwards on the database, also preserving the possibility of saving a record that enables the copy of messages on the mailbox. In this case the execution of the favorite delivery agent is launched, which can also be set from the configuration file. 
+the forwards on the database, also preserving the possibility of saving a record that
+enables the copy of messages on the mailbox. In this case the execution of the favorite delivery
+agent is launched, which can also be set from the configuration file. 
 
 Using this method instead of sieve rules allows `qmail` users to keep the SPF policies in effect.
 
