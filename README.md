@@ -16,9 +16,9 @@ Inspiration and part of the code for this plugin was taken from the `sieverules`
 
 Requirements
 ------------
-* [`vpopmail` version 5.6.x](https://notes.sagredo.eu/en/qmail-notes-185/installing-and-configuring-vpopmail-81.html)
-* `vpopmail` configured with virtual aliases `--enable-valias` and patched to modify the `valias` database schema.
-* you may want to upgrade [`qmailadmin`](https://notes.sagredo.eu/en/qmail-notes-185/qmailadmin-23.html) as well 
+* `vpopmail` configured with virtual aliases `--enable-valias` and patched to modify the `valias` database schema. You can manually modify the database schema as shown below.
+* [`vpopmail` version 5.6.x](https://notes.sagredo.eu/en/qmail-notes-185/installing-and-configuring-vpopmail-81.html) configured with `--enbable-defaultdelivery` if you want to manage the `dot-qmail` files and install `dovecot-lda` to use `sieve` together with `qmail` forwards. Look at [this page](https://notes.sagredo.eu/en/qmail-notes-185/sql-valias-with-sieve-solution-for-qmail-new-patches-and-roundcube-plugin-301.html) for more info.
+* you may want to upgrade [`qmailadmin`](https://notes.sagredo.eu/en/qmail-notes-185/qmailadmin-23.html) as well if using [`vpopmail` version 5.6.x](https://notes.sagredo.eu/en/qmail-notes-185/installing-and-configuring-vpopmail-81.html).
 
 Install
 -------
@@ -40,7 +40,7 @@ ALTER TABLE `valias` ADD PRIMARY KEY (`valias_type`, `alias`, `domain`);
 
 Configuration
 -------------
-* The default config file is *plugins/qmailforward/config.inc.php.dist*
+* The default config file is [*plugins/qmailforward/config.inc.php.dist*](config.inc.dist.php)
 * Copy the options you have to modify to *plugins/qmailforward/config.inc.php*
 * You must set at least the database connection string
 
@@ -63,6 +63,10 @@ This plugin is released under the [GNU General Public License Version 3+][gpl].
 
 Support
 -------
-To ask for support post a comment in [my blog](https://notes.sagredo.eu/en/qmail-notes-185/roundcube-plugins-35.html)
+To ask for support post a comment in [my blog](https://notes.sagredo.eu/en/qmail-notes-185/roundcube-plugins-35.html).
+
+More info
+---------
+To have a wider view on the idea behind this plugin look at [this page](https://notes.sagredo.eu/en/qmail-notes-185/installing-and-configuring-vpopmail-81.html).
 
 [gpl]: https://www.gnu.org/licenses/gpl.html
