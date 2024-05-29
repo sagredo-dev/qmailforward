@@ -26,8 +26,8 @@ Install
 * Add `qmailforward` to `$config['plugins']` in your `Roundcube` config
 * If you are switching to valiases the table will be created for you at first
   access. If you already have the valias table but it's still empty, just erase
-  it and let vpopmail create it for you.
-* If your valias table already exist and it contains records that you don't
+  it and let `vpopmail` create it for you.
+* If your valias table already exists and it contains records that you don't
   want to loose, then execute the following query. Drop any `PRIMARY KEY` if you
   already have one.
 
@@ -63,7 +63,7 @@ This plugin is released under the [GNU General Public License Version 3+][gpl].
 
 Support
 -------
-To ask for support post a comment in [my blog](https://notes.sagredo.eu/en/qmail-notes-185/roundcube-plugins-35.html).
+To ask for support post a comment in [my blog](https://notes.sagredo.eu/en/qmail-notes-185/sql-valias-with-sieve-solution-for-qmail-new-patches-and-roundcube-plugin-301.html).
 
 More info
 ---------
