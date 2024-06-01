@@ -12,7 +12,7 @@ agent is launched, which can also be set from the configuration file.
 
 Using this method instead of sieve rules allows `qmail` users to keep the SPF policies in effect.
 
-Inspiration and part of the code for this plugin was taken from the `sieverules` and `managesieve` plugins. The latter one provides an identical html form.
+Inspiration and part of the code for this plugin was taken from the `sauserprefs` and `managesieve` plugins. The latter one provides an identical html form.
 
 Requirements
 ------------
