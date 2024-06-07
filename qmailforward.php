@@ -10,6 +10,7 @@
  * @version 1.0.2
  * @author Roberto Puzzanghera
  * @url https://notes.sagredo.eu/en/qmail-notes-185/roundcube-plugins-35.html#qmailforward
+ *      https://notes.sagredo.eu/en/qmail-notes-185/sql-valias-with-sieve-solution-for-qmail-new-patches-and-roundcube-plugin-301.html
  *
  * Credits for the scheme of several functions and classes go to the
  * sauserprefs and managesieve authors. They are specified before the
@@ -227,13 +228,13 @@ class qmailforward extends rcube_plugin
 
         // add qmailforward tab
         $p['actions'][] = [
-			      'action' => 'plugin.qmailforward', // we defined an handler for this action
-			      'class' => 'qmailforward',
-            'label' => 'qmailforward.forward',
-            'title' => 'qmailforward.manage-forward',
-            'role'  => 'button',
+            'action'        => 'plugin.qmailforward', // we defined an handler for this action
+            'class'         => 'qmailforward',
+            'label'         => 'qmailforward.forward',
+            'title'         => 'qmailforward.manage-forward',
+            'role'          => 'button',
             'aria-disabled' => 'false',
-            'tabindex' => '0'];
+            'tabindex'      => '0'];
 
         return $p;
     }
