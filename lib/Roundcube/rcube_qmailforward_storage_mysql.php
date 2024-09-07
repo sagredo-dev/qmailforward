@@ -146,6 +146,21 @@ class rcube_qmailforward_storage_mysql extends rcube_qmailforward_storage
         }
         else if ($what_to_do == 'w')
         {
+            /*
+               Sep 07, 2024
+               Since the alias, domain, valias_type KEY is no longer unique (an alias can act as a forward to multiple emails)
+               in order to avoid forward duplicates we have to delete in advance any existing record that could already exist
+               at the time the user@domain is modifing his/her forward.
+             */
+            // delete all existing rows belonging to the user@domain
+            $sql = "DELETE FROM ".$this->table_name.
+                   " WHERE ".$this->alias_field. "='".$user.  "'".
+                     " AND ".$this->domain_field."='".$domain."'";
+
+            $this->db->query($sql);
+            $result = $this->db->affected_rows();
+
+
             // simple redirect with no copy on mailbox
             if ($_POST['forward_action'] == 'redirect') {
                 $sql = "INSERT INTO ".$this->table_name.
