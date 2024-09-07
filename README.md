@@ -35,7 +35,8 @@ Install
 USE vpopmail;
 ALTER TABLE `valias` ADD `valias_type` TINYINT(1) NOT NULL DEFAULT '1' COMMENT '1=forwarder 0=lda' FIRST;
 ALTER TABLE `valias` ADD `copy` TINYINT(1) NOT NULL DEFAULT '0' COMMENT '0=redirect 1=copy&redirect' AFTER `valias_line`;
-ALTER TABLE `valias` ADD PRIMARY KEY (`valias_type`, `alias`, `domain`);
+ALTER TABLE `valias` ADD `id` INT NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (`id`);
+ALTER TABLE `valias` ADD INDEX (`valias_type`, `alias`, `domain`); 
 ```
 
 Configuration
