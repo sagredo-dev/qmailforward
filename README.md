@@ -49,6 +49,7 @@ Supported languages
 -------------------
 * en_US - English (US)
 * en_GB - English (GB)
+* fr_FR - French
 * it_IT - Italian
 * ru_RU - Russian
 
