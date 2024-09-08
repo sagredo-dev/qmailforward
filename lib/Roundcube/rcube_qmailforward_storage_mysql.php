@@ -162,19 +162,10 @@ class rcube_qmailforward_storage_mysql extends rcube_qmailforward_storage
             // simple redirect with no copy on mailbox
             if ($_POST['forward_action'] == 'redirect') {
                 $sql = "INSERT INTO ".$this->table_name.
-                    " (" . $this->alias_field . ", " .
-                        $this->domain_field. ", " .
-                        $this->valias_field .", " .
-                        $this->copy_field .", " .
-                        $this->type_field .
-                    ")" .
-                    " VALUES (" .
-                        "'" . $user .  "', " .
-                        "'" . $domain .  "', " .
-                        "'" . $valias_line .  "', " .
-                        "0, " .
-                        "1" .
-                    ")";
+                       " SET ".$this->alias_field. "='".$user.  "', ".
+                               $this->domain_field."='".$domain."', ".
+                               $this->valias_field."='".$valias_line."', ".
+                               $this->copy_field.  "=0";
 
                 $this->db->query($sql);
                 return $this->db->affected_rows() != 0;
@@ -183,19 +174,10 @@ class rcube_qmailforward_storage_mysql extends rcube_qmailforward_storage
             else if ($_POST['forward_action'] == 'copy') {
                 // save the forward record
                 $sql = "INSERT INTO ".$this->table_name.
-                    " (" . $this->alias_field . ", " .
-                        $this->domain_field. ", " .
-                        $this->valias_field . ", " .
-                        $this->copy_field . ", " .
-                        $this->type_field .
-                    ")" .
-                    " VALUES (" .
-                        "'" . $user . "', ". 
-                        "'" . $domain . "', " .
-                        "'" . $valias_line . "', " .
-                        "1, " .
-                        "1" .
-                    ")";
+                       " SET ".$this->alias_field. "='".$user.  "', ".
+                               $this->domain_field."='".$domain."', ".
+                               $this->valias_field."='".$valias_line."', ".
+                               $this->copy_field.  "=1";
 
                 $this->db->query($sql);
                 if (!$this->db->affected_rows()) return false;
