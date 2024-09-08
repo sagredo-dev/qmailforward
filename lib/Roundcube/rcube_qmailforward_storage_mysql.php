@@ -28,6 +28,7 @@ class rcube_qmailforward_storage_mysql extends rcube_qmailforward_storage
 {
     private $db;
     private $db_dsnw;
+    private $db_dsnr;
     private $db_persistent;
     private $table_name;
     private $alias_field;
@@ -100,7 +101,6 @@ class rcube_qmailforward_storage_mysql extends rcube_qmailforward_storage
      */
     public function save($user, $domain)
     {
-        $result = false;
         $this->_db_connect('w');
         $sql = '';
 
@@ -140,9 +140,9 @@ class rcube_qmailforward_storage_mysql extends rcube_qmailforward_storage
                          " AND ".$this->domain_field."='".$domain."'";
 
                 $this->db->query($sql);
-                $result = $this->db->affected_rows();
+                return $this->db->affected_rows() != 0;
             }
-            else $result = true;
+            else return true;
         }
         else if ($what_to_do == 'w')
         {
@@ -158,46 +158,44 @@ class rcube_qmailforward_storage_mysql extends rcube_qmailforward_storage
                      " AND ".$this->domain_field."='".$domain."'";
 
             $this->db->query($sql);
-            $result = $this->db->affected_rows();
-
 
             // simple redirect with no copy on mailbox
             if ($_POST['forward_action'] == 'redirect') {
                 $sql = "INSERT INTO ".$this->table_name.
-                       " SET ".$this->alias_field. "='".$user.  "', ".
-                               $this->domain_field."='".$domain."', ".
-                               $this->valias_field."='".$valias_line."', ".
-                               $this->copy_field.  "=0 ".
-                       "ON DUPLICATE KEY UPDATE ".
-                               $this->alias_field. "='".$user.  "', ".
-                               $this->domain_field."='".$domain."', ".
-                               $this->valias_field."='".$valias_line."', ".
-                               $this->copy_field.  "=0 ";
+                    " (" . $this->alias_field . ", " .
+                        $this->domain_field. ", " .
+                        $this->valias_field .", " .
+                        $this->copy_field .", " .
+                        $this->type_field .
+                    ")" .
+                    " VALUES (" .
+                        "'" . $user .  "', " .
+                        "'" . $domain .  "', " .
+                        "'" . $valias_line .  "', " .
+                        "0, " .
+                        "1" .
+                    ")";
 
                 $this->db->query($sql);
-                if (!$this->db->affected_rows()) return false;
-
-                // delete all eventually present lda records (valias_type=0)
-                $sql = "DELETE FROM ".$this->table_name.
-                       " WHERE ".$this->alias_field. "='".$user.  "'".
-                         " AND ".$this->domain_field."='".$domain."'".
-                         " AND ".$this->type_field."=0";
-
-                $result = $this->db->query($sql);
+                return $this->db->affected_rows() != 0;
             }
             // send copy and save to mailbox
             else if ($_POST['forward_action'] == 'copy') {
                 // save the forward record
                 $sql = "INSERT INTO ".$this->table_name.
-                       " SET ".$this->alias_field. "='".$user.  "', ".
-                               $this->domain_field."='".$domain."', ".
-                               $this->valias_field."='".$valias_line."', ".
-                               $this->copy_field.  "=1 ".
-                       "ON DUPLICATE KEY UPDATE ".
-                               $this->alias_field. "='".$user.  "', ".
-                               $this->domain_field."='".$domain."', ".
-                               $this->valias_field."='".$valias_line."', ".
-                               $this->copy_field.  "=1 ";
+                    " (" . $this->alias_field . ", " .
+                        $this->domain_field. ", " .
+                        $this->valias_field . ", " .
+                        $this->copy_field . ", " .
+                        $this->type_field .
+                    ")" .
+                    " VALUES (" .
+                        "'" . $user . "', ". 
+                        "'" . $domain . "', " .
+                        "'" . $valias_line . "', " .
+                        "1, " .
+                        "1" .
+                    ")";
 
                 $this->db->query($sql);
                 if (!$this->db->affected_rows()) return false;
@@ -209,20 +207,24 @@ class rcube_qmailforward_storage_mysql extends rcube_qmailforward_storage
                  */
                 if ($this->defaultdelivery_enabled) {
                     $sql = "INSERT INTO ".$this->table_name.
-                           " SET ".$this->alias_field. "='".$user.  "', ".
-                                   $this->domain_field."='".$domain."', ".
-                                   $this->valias_field."=".$this->db->quote($this->defaultdelivery).", ".
-                                   $this->type_field.  "=0 ".
-                           "ON DUPLICATE KEY UPDATE ".
-                                   $this->alias_field. "='".$user.  "', ".
-                                   $this->domain_field."='".$domain."', ".
-                                   $this->valias_field."=".$this->db->quote($this->defaultdelivery).", ".
-                                   $this->type_field.  "=0";
-
+                        " (" . $this->alias_field . ", " .
+                            $this->domain_field. ", " .
+                            $this->valias_field .", " .
+                            $this->copy_field .", " .
+                            $this->type_field .
+                        ")" .
+                        " VALUES (" .
+                           "'" . $user. "', " .
+                           "'" . $domain. "', " .
+                           $this->db->quote($this->defaultdelivery) .  ", " .
+                           "1, " . 
+                           "1" .
+                        ")";
                     $this->db->query($sql);
-                    $result = $this->db->affected_rows();
-                    return $result;
+                    return $this->db->affected_rows() != 0;
                 }
+                
+                return true;
             }
         }
         return true;
