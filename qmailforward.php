@@ -7,10 +7,10 @@
  * aliases in the database (--enable-valias). Adjustments to
  * qmailadmin are needed as well.
  *
- * @version 1.0.2
+ * @version 1.0.3
  * @author Roberto Puzzanghera
  * @url https://notes.sagredo.eu/en/qmail-notes-185/roundcube-plugins-35.html#qmailforward
- *      https://notes.sagredo.eu/en/qmail-notes-185/sql-valias-with-sieve-solution-for-qmail-new-patches-and-roundcube-plugin-301.html
+ *      https://notes.sagredo.eu/en/qmail-notes-185/sql-valias-with-sieve-solution-for-qmail-new-features-and-roundcube-plugin-301.html
  *
  * Credits for the scheme of several functions and classes go to the
  * sauserprefs and managesieve authors. They are specified before the
