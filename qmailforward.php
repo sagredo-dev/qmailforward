@@ -33,6 +33,7 @@
 class qmailforward extends rcube_plugin
 {
     public  $task = 'settings';
+    private $rc;
     private $storage;
     private $user;
     private $domain;
