@@ -189,23 +189,14 @@ class rcube_qmailforward_storage_mysql extends rcube_qmailforward_storage
                  */
                 if ($this->defaultdelivery_enabled) {
                     $sql = "INSERT INTO ".$this->table_name.
-                        " (" . $this->alias_field . ", " .
-                            $this->domain_field. ", " .
-                            $this->valias_field .", " .
-                            $this->copy_field .", " .
-                            $this->type_field .
-                        ")" .
-                        " VALUES (" .
-                           "'" . $user. "', " .
-                           "'" . $domain. "', " .
-                           $this->db->quote($this->defaultdelivery) .  ", " .
-                           "1, " . 
-                           "1" .
-                        ")";
+                           " SET ".$this->alias_field. "='".$user.  "', ".
+                                   $this->domain_field."='".$domain."', ".
+                                   $this->valias_field."=".$this->db->quote($this->defaultdelivery).", ".
+                                   $this->type_field.  "=0 ";
                     $this->db->query($sql);
                     return $this->db->affected_rows() != 0;
                 }
-                
+
                 return true;
             }
         }
