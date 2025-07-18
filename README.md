@@ -17,8 +17,8 @@ Inspiration and part of the code for this plugin was taken from the `sauserprefs
 Requirements
 ------------
 * `vpopmail` configured with virtual aliases `--enable-valias` and patched to modify the `valias` database schema. You can manually modify the database schema as shown below.
-* [`vpopmail` version 5.6.x](https://notes.sagredo.eu/en/qmail-notes-185/installing-and-configuring-vpopmail-81.html) configured with `--enbable-defaultdelivery` if you want to manage the `dot-qmail` files and install `dovecot-lda` to use `sieve` together with `qmail` forwards. Look at [this page](https://notes.sagredo.eu/en/qmail-notes-185/sql-valias-with-sieve-solution-for-qmail-new-patches-and-roundcube-plugin-301.html) for more info.
-* you may want to upgrade [`qmailadmin`](https://notes.sagredo.eu/en/qmail-notes-185/qmailadmin-23.html) as well if using [`vpopmail` version 5.6.x](https://notes.sagredo.eu/en/qmail-notes-185/installing-and-configuring-vpopmail-81.html).
+* [`vpopmail` version 5.6.x](https://www.sagredo.eu/en/qmail-notes-185/installing-and-configuring-vpopmail-81.html) configured with `--enbable-defaultdelivery` if you want to manage the `dot-qmail` files and install `dovecot-lda` to use `sieve` together with `qmail` forwards. Look at [this page](https://www.sagredo.eu/en/qmail-notes-185/sql-valias-with-sieve-solution-for-qmail-new-patches-and-roundcube-plugin-301.html) for more info.
+* you may want to upgrade [`qmailadmin`](https://www.sagredo.eu/en/qmail-notes-185/qmailadmin-23.html) as well if using [`vpopmail` version 5.6.x](https://www.sagredo.eu/en/qmail-notes-185/installing-and-configuring-vpopmail-81.html).
 
 Install
 -------
@@ -57,7 +57,7 @@ Send new translations to the e-mail below.
 
 Author
 ------
-Roberto Puzzanghera [roberto dot puzzanghera at sagredo dot eu https://notes.sagredo.eu]
+Roberto Puzzanghera [roberto dot puzzanghera at sagredo dot eu https://www.sagredo.eu]
 
 License
 -------
@@ -65,10 +65,10 @@ This plugin is released under the [GNU General Public License Version 3+][gpl].
 
 Support
 -------
-To ask for support post a comment in [my blog](https://notes.sagredo.eu/en/qmail-notes-185/sql-valias-with-sieve-solution-for-qmail-new-patches-and-roundcube-plugin-301.html).
+To ask for support post a comment in [my blog](https://www.sagredo.eu/en/qmail-notes-185/sql-valias-with-sieve-solution-for-qmail-new-patches-and-roundcube-plugin-301.html).
 
 More info
 ---------
-To have a wider view on the idea behind this plugin look at [this page](https://notes.sagredo.eu/en/qmail-notes-185/sql-valias-with-sieve-solution-for-qmail-new-patches-and-roundcube-plugin-301.html).
+To have a wider view on the idea behind this plugin look at [this page](https://www.sagredo.eu/en/qmail-notes-185/sql-valias-with-sieve-solution-for-qmail-new-patches-and-roundcube-plugin-301.html).
 
 [gpl]: https://www.gnu.org/licenses/gpl.html

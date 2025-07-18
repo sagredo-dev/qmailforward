@@ -5,7 +5,7 @@
  * Class to handle the SQL work for qmailforward
  *
  * @author Philip Weir
- *         Modified by Roberto Puzzanghera htps://notes.sagredo.eu
+ *         Modified by Roberto Puzzanghera htps://www.sagredo.eu
  *
  * Copyright (C) Philip Weir
  *
