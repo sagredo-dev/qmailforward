@@ -47,8 +47,9 @@ Configuration
 
 Supported languages
 -------------------
-* en_US - English (US)
+* de_DE - German
 * en_GB - English (GB)
+* en_US - English (US)
 * fr_FR - French
 * it_IT - Italian
 * ru_RU - Russian

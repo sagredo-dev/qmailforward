@@ -3,7 +3,6 @@
 
 $labels['manage-forward'] = 'Gestisci le impostazioni dell\'inoltro';
 $labels['page-title']     = 'Gestione dell\'inoltro';
-
 $labels['forward']  = 'Inoltro';
 $labels['redirect'] = 'Reindirizza a';
 $labels['copy']     = 'Invia copia a';
@@ -14,5 +13,4 @@ $labels['action']   = 'Esegui le seguenti azioni all\'arrivo di messaggi di post
 $labels['saving']   = 'Salvataggio...';
 $labels['success']  = 'Salvataggio avvenuto con successo';
 $labels['failed']   = 'Errore durante il salvataggio dei dati';
-
 $labels['invalid_email'] = 'Indirizzo e-mail non valido';
