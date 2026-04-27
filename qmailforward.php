@@ -199,7 +199,7 @@ class qmailforward extends rcube_plugin
                $_POST['action_target'];
         // sanity check
         if (!$this->validEmail($email)) {
-            $error = $this->gettext('invalid_email').": ".$email.$_SERVER['REQUEST_METHOD'] ;
+            $error = $this->gettext('invalid_email').": ".$email;
             $success = false;
         }
 
@@ -209,7 +209,7 @@ class qmailforward extends rcube_plugin
          * result = true on success
          *          false on error
          ***************************************/
-        if (!$this->storage->save($this->user, $this->domain)) $success = false;
+        if ($success && !$this->storage->save($this->user, $this->domain)) $success = false;
 
         // return feedback
         if ($success) {
