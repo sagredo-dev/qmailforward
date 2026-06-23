@@ -66,10 +66,10 @@ This plugin is released under the [GNU General Public License Version 3+][gpl].
 
 Support
 -------
-To ask for support post a comment in [my blog](https://www.sagredo.eu/en/qmail-notes-185/sql-valias-with-sieve-solution-for-qmail-new-patches-and-roundcube-plugin-301.html).
+To ask for support post a comment in [my blog](https://notes.sagredo.eu/en/qmail-notes-185/sql-valias-with-sieve-solution-for-qmail-new-patches-and-roundcube-plugin-301.html).
 
 More info
 ---------
-To have a wider view on the idea behind this plugin look at [this page](https://www.sagredo.eu/en/qmail-notes-185/sql-valias-with-sieve-solution-for-qmail-new-patches-and-roundcube-plugin-301.html).
+To have a wider view on the idea behind this plugin look at [this page](https://notes.sagredo.eu/en/qmail-notes-185/sql-valias-with-sieve-solution-for-qmail-new-patches-and-roundcube-plugin-301.html).
 
 [gpl]: https://www.gnu.org/licenses/gpl.html
