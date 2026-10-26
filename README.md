@@ -12,13 +12,17 @@ agent is launched, which can also be set from the configuration file.
 
 Using this method instead of sieve rules allows `qmail` users to keep the SPF policies in effect.
 
-Inspiration and part of the code for this plugin was taken from the `sauserprefs` and `managesieve` plugins. The latter one provides an identical html form.
+Inspiration and part of the code for this plugin was taken from the `sauserprefs` and `managesieve`
+plugins. The latter one provides an identical html form.
 
 Requirements
 ------------
-* `vpopmail` configured with virtual aliases `--enable-valias` and patched to modify the `valias` database schema. You can manually modify the database schema as shown below.
-* [`vpopmail` version 5.6.x](https://notes.sagredo.eu/en/qmail-notes-185/installing-and-configuring-vpopmail-81.html) configured with `--enbable-defaultdelivery` if you want to manage the `dot-qmail` files and install `dovecot-lda` to use `sieve` together with `qmail` forwards. Look at [this page](https://notes.sagredo.eu/en/qmail-notes-185/sql-valias-with-sieve-solution-for-qmail-new-patches-and-roundcube-plugin-301.html) for more info.
-* you may want to upgrade [`qmailadmin`](https://notes.sagredo.eu/en/qmail-notes-185/qmailadmin-23.html) as well if using [`vpopmail` version 5.6.x](https://notes.sagredo.eu/en/qmail-notes-185/installing-and-configuring-vpopmail-81.html).
+* `vpopmail` configured with virtual aliases `--enable-valias` and patched to modify the `valias`
+database schema. You can manually modify the database schema as shown below.
+* [`vpopmail` version 5.7.x](https://notes.sagredo.eu/en/qmail-notes-185/installing-and-configuring-vpopmail-81.html) configured with `--enbable-defaultdelivery` if you want to manage the `dot-qmail` files and install `dovecot-lda` to use `sieve` together with `qmail` forwards. Look at [this page](https://notes.sagredo.eu/en/qmail-notes-185/sql-valias-with-sieve-solution-for-qmail-new-patches-and-roundcube-plugin-301.html)
+for more info.
+* you may want to upgrade [`qmailadmin`](https://notes.sagredo.eu/en/qmail-notes-185/qmailadmin-23.html)
+as well if using [`vpopmail` version 5.7.x](https://notes.sagredo.eu/en/qmail-notes-185/installing-and-configuring-vpopmail-81.html).
 
 Install
 -------

@@ -21,6 +21,7 @@
     "roundcube": {
       "min-version": "1.5",
       "persistent-files": ["config.inc.php", "skins/elastic/_custom.less"]
-    }
+    },
+    "vpopmail-min-version": "6.7.0"
   }
 }
