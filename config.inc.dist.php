@@ -13,7 +13,9 @@
 
 // The content of the valias for the delivery. Put here your value as if it was
 // a dot-qmail file content.
-$config['qmailforward_defaultdelivery'] = '| /var/qmail/bin/preline -f /usr/local/dovecot/libexec/dovecot/deliver -d $EXT@$USER';
+// :default executes etc/vdefaultdelivery (only vpopmail >= 5.7.0)
+// $config['qmailforward_defaultdelivery'] = '| /var/qmail/bin/preline -f /usr/local/dovecot/libexec/dovecot/deliver -d $EXT@$USER';
+$config['qmailforward_defaultdelivery'] = ':default';
 
 
 /********************************************************************
